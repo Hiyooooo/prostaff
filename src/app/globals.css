@@ -1,0 +1,113 @@
+@import "tailwindcss";
+
+/* Token warna docs/02 §2. Satu-satunya tempat hex bersama src/lib/brand.ts. */
+:root {
+  /* Input pemilik */
+  --pure-black: #000000;
+  --true-white: #FFFFFF;
+  --neutral-gray: #71717A;
+
+  /* Permukaan */
+  --surface: #FFFFFF;
+  --surface-subtle: #FAFAFA;
+  --surface-hover: #F4F4F5;
+  --surface-inverse: #000000;
+  --surface-inverse-raised: #0A0A0A;
+
+  /* Garis */
+  --line: #E4E4E7;
+  --line-strong: #71717A;
+  --line-mid: #D4D4D8;
+  --line-inverse: #27272A;
+
+  /* Teks di permukaan terang */
+  --text: #000000;
+  --text-secondary: #52525B;
+  --text-muted: #71717A;
+
+  /* Teks di permukaan hitam */
+  --text-inverse: #FFFFFF;
+  --text-inverse-secondary: #D4D4D8;
+  --text-inverse-muted: #A1A1AA;
+
+  /* Fokus */
+  --focus-ring: #000000;
+  --focus-ring-inverse: #FFFFFF;
+
+  /* Overlay foto (datar, tanpa gradien) */
+  --photo-overlay: rgb(0 0 0 / 0.64);
+}
+
+/* Pita hitam: token semantik di-remap (pola prototipe) supaya komponen yang
+   sama terbaca di atas hitam sesuai pasangan kontras 02 §2.1. */
+.on-inverse {
+  --surface: #000000;
+  --surface-subtle: #0A0A0A;
+  --surface-hover: #0A0A0A;
+  --line: #27272A;
+  --line-strong: #A1A1AA;
+  --line-mid: #A1A1AA;
+  --text: #FFFFFF;
+  --text-secondary: #A1A1AA;
+  --text-muted: #A1A1AA;
+}
+
+@theme inline {
+  --color-pure-black: var(--pure-black);
+  --color-true-white: var(--true-white);
+  --color-surface: var(--surface);
+  --color-surface-subtle: var(--surface-subtle);
+  --color-surface-hover: var(--surface-hover);
+  --color-surface-inverse: var(--surface-inverse);
+  --color-surface-inverse-raised: var(--surface-inverse-raised);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-line-mid: var(--line-mid);
+  --color-line-inverse: var(--line-inverse);
+  --color-ink: var(--text);
+  --color-ink-secondary: var(--text-secondary);
+  --color-ink-muted: var(--text-muted);
+  --color-ink-inverse: var(--text-inverse);
+  --color-ink-inverse-secondary: var(--text-inverse-secondary);
+  --color-ink-inverse-muted: var(--text-inverse-muted);
+  --color-photo-overlay: var(--photo-overlay);
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, monospace;
+  --radius-control: 2px;
+  --radius-key: 3px;
+
+  /* Breakpoint 02 §4: 375 (basis), 560, 700, 860, 960, 1120 */
+  --breakpoint-sm: 560px;
+  --breakpoint-md: 700px;
+  --breakpoint-lg: 860px;
+  --breakpoint-xl: 960px;
+  --breakpoint-2xl: 1120px;
+}
+
+html {
+  background: var(--surface);
+  color: var(--text);
+  font-family: var(--font-sans);
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: auto;
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+.on-inverse :focus-visible {
+  outline-color: var(--focus-ring-inverse);
+}
+
+section[id] {
+  scroll-margin-top: 72px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    transition-duration: 0ms !important;
+    animation: none !important;
+  }
+}

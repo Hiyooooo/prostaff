@@ -1,0 +1,836 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ProStaff HRIS · Sistem manajemen SDM minimalis</title>
+<meta name="description" content="ProStaff HRIS menyatukan arsip dokumen, presensi, perizinan, penggajian, dan uji teknis dalam satu antarmuka monokrom." />
+<link rel="preload" href="assets/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="assets/prostaff.css" />
+</head>
+<body>
+
+<header class="nav" data-od-id="navbar">
+  <div class="shell">
+    <a class="logo" href="#top" data-od-id="nav-logo">
+      <span class="logo__mark" aria-hidden="true"></span>ProStaff
+    </a>
+    <nav class="nav__links" id="nav-links" aria-label="Navigasi utama">
+      <a class="nav__link" href="#library">Library</a>
+      <a class="nav__link" href="#perizinan">Perizinan</a>
+      <a class="nav__link" href="#absensi">Absensi</a>
+      <a class="nav__link" href="#gaji">Gaji</a>
+      <a class="nav__link" href="#exam">Exam</a>
+      <a class="nav__link" href="#faq">FAQ</a>
+      <button class="btn btn--primary nav__cta" type="button" data-demo data-od-id="nav-cta">Jadwalkan demo</button>
+    </nav>
+    <button class="iconbtn nav__toggle" type="button" id="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Buka menu navigasi">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- 1 · HERO -->
+  <section class="sec sec--first hero" id="hero" data-od-id="hero">
+    <div class="shell">
+      <div class="hero__grid">
+        <div class="hero__copy">
+          <p class="eyebrow">prostaff / hris</p>
+          <h1 class="h1"><span>Navigasi cepat.</span><span>Layar bersih.</span><span>Nol bloatware.</span></h1>
+          <p class="lead">ProStaff HRIS menyatukan arsip dokumen, presensi, perizinan, penggajian, dan uji teknis dalam satu antarmuka monokrom. Aksi utama selesai dari keyboard, tanpa pop-up dan tanpa tur onboarding.</p>
+          <div class="hero__cta">
+            <button class="btn btn--primary" type="button" data-demo data-od-id="hero-cta-demo">Jadwalkan demo</button>
+            <a class="btn btn--secondary" href="#library" data-od-id="hero-cta-library">Lihat Library</a>
+          </div>
+        </div>
+        <figure class="photo hero__photo">
+          <img src="assets/img/hero-desk.jpg" width="1200" height="1500" alt="Meja kerja minimalis dengan buku catatan, lilin, dan laptop" />
+          <figcaption class="photo__chip">Foto ilustrasi</figcaption>
+        </figure>
+      </div>
+
+      <div class="win" aria-hidden="true" inert>
+        <div class="win__bar">
+          <span class="win__dots" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span class="win__path">prostaff.example / library</span>
+          <span class="win__meta">v2.4.0</span>
+        </div>
+        <div class="win__body">
+          <div class="tree" role="tree" aria-label="Pohon folder Library">
+            <div class="tree__group">
+              <button class="tree__row" type="button" aria-expanded="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 7a1 1 0 0 1 1-1h5l2 2h8a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/></svg>
+                Hukum <span class="count">2</span>
+              </button>
+              <div class="tree__kids">
+                <button class="tree__kid" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 3H7a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V7z"/><path d="M14 3v4h4"/></svg>Retensi Dokumen</button>
+                <button class="tree__kid" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 3H7a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V7z"/><path d="M14 3v4h4"/></svg>Kebijakan Privasi</button>
+              </div>
+            </div>
+            <div class="tree__group">
+              <button class="tree__row" type="button" aria-expanded="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 7a1 1 0 0 1 1-1h5l2 2h8a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/></svg>
+                Operasional <span class="count">2</span>
+              </button>
+              <div class="tree__kids">
+                <button class="tree__kid" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 3H7a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V7z"/><path d="M14 3v4h4"/></svg>Pengajuan Cuti</button>
+                <button class="tree__kid" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 3H7a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V7z"/><path d="M14 3v4h4"/></svg>Absensi Lapangan</button>
+              </div>
+            </div>
+            <div class="tree__group">
+              <button class="tree__row" type="button" aria-expanded="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 7a1 1 0 0 1 1-1h5l2 2h8a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/></svg>
+                SDM <span class="count">2</span>
+              </button>
+              <div class="tree__kids">
+                <button class="tree__kid" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 3H7a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V7z"/><path d="M14 3v4h4"/></svg>Rubrik Exam</button>
+                <button class="tree__kid" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 3H7a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V7z"/><path d="M14 3v4h4"/></svg>Komponen Gaji</button>
+              </div>
+            </div>
+            <div class="tree__group">
+              <button class="tree__row" type="button" aria-expanded="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 7a1 1 0 0 1 1-1h5l2 2h8a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/></svg>
+                Teknik <span class="count">2</span>
+              </button>
+              <div class="tree__kids">
+                <button class="tree__kid" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 3H7a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V7z"/><path d="M14 3v4h4"/></svg>Standar Kode</button>
+                <button class="tree__kid" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 3H7a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V7z"/><path d="M14 3v4h4"/></svg>Catatan Rilis</button>
+              </div>
+            </div>
+          </div>
+          <div class="win__main">
+            <div class="searchfield">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+              <span>dokumen</span>
+              <span class="kbd-slot"><kbd>/</kbd></span>
+            </div>
+            <div class="results" role="listbox" aria-label="Hasil pencarian dokumen">
+              <button class="result" type="button" role="option" aria-selected="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 3H7a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V7z"/><path d="M14 3v4h4"/></svg>
+                <span><span class="result__title">Retensi Dokumen</span><span class="result__path">Hukum / Kebijakan</span></span>
+                <span class="result__kind">3 hasil</span>
+              </button>
+              <button class="result" type="button" role="option" aria-selected="false">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 3H7a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V7z"/><path d="M14 3v4h4"/></svg>
+                <span><span class="result__title">Penomoran Dokumen</span><span class="result__path">Operasional / SOP</span></span>
+              </button>
+              <button class="result" type="button" role="option" aria-selected="false">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 3H7a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V7z"/><path d="M14 3v4h4"/></svg>
+                <span><span class="result__title">Dokumen Pajak Karyawan</span><span class="result__path">SDM / Penggajian</span></span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2 · SPESIFIKASI -->
+  <section class="sec" id="spesifikasi" data-od-id="spesifikasi">
+    <div class="shell">
+      <span class="cross" aria-hidden="true">+</span>
+      <span class="cross cross--r" aria-hidden="true">+</span>
+      <div class="spec">
+        <div class="spec__cell">
+          <span class="spec__n">5</span>
+          <p class="spec__t">modul dalam satu layar kerja</p>
+          <p class="spec__d">library · perizinan · absensi · gaji · exam</p>
+        </div>
+        <div class="spec__cell">
+          <span class="spec__n">1</span>
+          <p class="spec__t">klik untuk mencatat presensi</p>
+          <p class="spec__d">masuk dan keluar dari tombol yang sama</p>
+        </div>
+        <div class="spec__cell">
+          <span class="spec__n">0</span>
+          <p class="spec__t">pop-up di dalam aplikasi</p>
+          <p class="spec__d">form, log, dan pratinjau tetap di halaman</p>
+        </div>
+        <div class="spec__cell">
+          <span class="spec__n">2</span>
+          <p class="spec__t">format ekspor gaji: CSV dan PDF</p>
+          <p class="spec__d">csv untuk rekap · pdf untuk slip</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 · AUDIENS -->
+  <section class="sec sec--subtle" id="audiens" data-od-id="audiens">
+    <div class="shell">
+      <span class="cross" aria-hidden="true">+</span>
+      <div class="row-between">
+        <div class="sec-head">
+          <p class="eyebrow">prostaff / audiens</p>
+          <h2 class="h2">Dibuat untuk kantor yang bekerja dengan dokumen.</h2>
+          <p class="lead">Empat jenis kantor, satu pola kerja: berkas menumpuk, izin menunggu, dan presensi dicatat di tempat berbeda. ProStaff menyatukannya tanpa mengubah kebiasaan tim.</p>
+        </div>
+        <button class="btn btn--primary" type="button" data-demo data-od-id="audiens-cta-demo">Jadwalkan demo</button>
+      </div>
+
+      <div class="aud">
+        <article class="aud__item" data-od-id="audiens-hukum">
+          <figure class="photo">
+            <img src="assets/img/audience-law.jpg" width="900" height="600" alt="Patung Dewi Keadilan dengan timbangan di kantor hukum" loading="lazy" />
+            <figcaption class="photo__chip">Foto ilustrasi</figcaption>
+          </figure>
+          <h3 class="h3">Konsultan hukum</h3>
+          <p>Retensi berkas perkara, izin keluar kantor, dan penggajian paralegal pada satu arsip.</p>
+        </article>
+        <article class="aud__item" data-od-id="audiens-arsitektur">
+          <figure class="photo">
+            <img src="assets/img/audience-arch.jpg" width="900" height="600" alt="Arsitek menggambar rencana bangunan dengan penggaris skala" loading="lazy" />
+            <figcaption class="photo__chip">Foto ilustrasi</figcaption>
+          </figure>
+          <h3 class="h3">Studio arsitektur</h3>
+          <p>Lembur proyek yang otomatis masuk ke penggajian, dengan SOP terlampir di form izin.</p>
+        </article>
+        <article class="aud__item" data-od-id="audiens-software">
+          <figure class="photo">
+            <img src="assets/img/audience-software.jpg" width="900" height="600" alt="Meja pengembang dengan laptop, monitor, dan kopi" loading="lazy" />
+            <figcaption class="photo__chip">Foto ilustrasi</figcaption>
+          </figure>
+          <h3 class="h3">Software house</h3>
+          <p>Uji teknis dengan rubrik berbobot, arsip skor, dan riwayat kompetensi per engineer.</p>
+        </article>
+        <article class="aud__item" data-od-id="audiens-profesional">
+          <figure class="photo">
+            <img src="assets/img/audience-professional.jpg" width="900" height="600" alt="Koridor kantor modern dengan rak kayu dan ruang istirahat" loading="lazy" />
+            <figcaption class="photo__chip">Foto ilustrasi</figcaption>
+          </figure>
+          <h3 class="h3">Kantor profesional</h3>
+          <p>Presensi geofence, rekap keterlambatan sampai milidetik, dan ekspor bulanan tanpa makro.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 · PRINSIP (HITAM) -->
+  <section class="sec sec--dark" id="prinsip" data-od-id="prinsip">
+    <div class="shell">
+      <span class="cross" aria-hidden="true">+</span>
+      <span class="cross cross--r" aria-hidden="true">+</span>
+      <div class="principles">
+        <div>
+          <p class="eyebrow">prostaff / prinsip</p>
+          <h2 class="h2">Empat aturan antarmuka.</h2>
+          <div class="rules">
+            <div class="rule-item">
+              <span class="rule-item__n">01</span>
+              <div><h3 class="h3">Satu aksi, satu kontrol.</h3><p>Setiap layar punya satu tombol utama. Sisanya sekunder, dan tidak ada dua tombol yang melakukan hal sama.</p></div>
+            </div>
+            <div class="rule-item">
+              <span class="rule-item__n">02</span>
+              <div><h3 class="h3">Keyboard lebih dulu.</h3><p>Semua alur demo bisa diselesaikan tanpa mouse. Shortcut ditulis di tempat kerja, bukan di halaman bantuan.</p></div>
+            </div>
+            <div class="rule-item">
+              <span class="rule-item__n">03</span>
+              <div><h3 class="h3">Tanpa gangguan.</h3><p>Tidak ada pop-up, tidak ada tur onboarding, tidak ada notifikasi yang menutup pekerjaan.</p></div>
+            </div>
+            <div class="rule-item">
+              <span class="rule-item__n">04</span>
+              <div><h3 class="h3">Data terbaca di tabel.</h3><p>Angka rata kanan, satuan ditulis penuh, dan presisi tidak dipotong agar rapi.</p></div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <table class="shortcuts">
+            <caption>Shortcut yang aktif di halaman ini</caption>
+            <thead><tr><th scope="col">Modul</th><th scope="col">Tombol</th><th scope="col" style="text-align:right">Aksi</th></tr></thead>
+            <tbody>
+              <tr><td>Library</td><td><span class="keys"><kbd>/</kbd></span></td><td class="act">fokus cari</td></tr>
+              <tr><td>Library</td><td><span class="keys"><kbd>↑</kbd><kbd>↓</kbd></span></td><td class="act">pindah hasil</td></tr>
+              <tr><td>Library</td><td><span class="keys"><kbd>Enter</kbd></span></td><td class="act">buka</td></tr>
+              <tr><td>Perizinan</td><td><span class="keys"><kbd>1</kbd><kbd>2</kbd><kbd>3</kbd></span></td><td class="act">jenis izin</td></tr>
+              <tr><td>Perizinan</td><td><span class="keys"><kbd>Ctrl</kbd><kbd>+</kbd><kbd>Enter</kbd></span></td><td class="act">kirim</td></tr>
+              <tr><td>Perizinan</td><td><span class="keys"><kbd>Esc</kbd></span></td><td class="act">kosongkan</td></tr>
+              <tr><td>Absensi</td><td><span class="keys"><kbd>Space</kbd></span></td><td class="act">catat</td></tr>
+            </tbody>
+          </table>
+          <p class="meta" style="margin-top:18px">Fokus keyboard ditandai garis 2px. Urutan tab mengikuti urutan baca.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 · LIBRARY -->
+  <section class="sec" id="library" data-od-id="library">
+    <div class="shell">
+      <span class="cross" aria-hidden="true">+</span>
+      <div class="row-between">
+        <div class="sec-head">
+          <p class="eyebrow">prostaff / library</p>
+          <h2 class="h2">Library: wiki dokumen yang Anda telusuri dari keyboard.</h2>
+          <p class="lead">Pohon folder markdown, pencarian instan, dan pratinjau sumber pada satu layar. Tekan <kbd>/</kbd>, ketik kata kunci, lalu pindah hasil dengan panah.</p>
+        </div>
+        <p class="meta" style="text-align:right">3 panel · tinggi tetap 480px<br />markdown · tanpa modal</p>
+      </div>
+
+      <div class="libwin" aria-label="Demo Library tiga panel">
+        <div class="win__bar">
+          <span class="win__dots" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span class="win__path">prostaff.example / library</span>
+          <span class="win__meta">480 px</span>
+        </div>
+        <div class="libwin__grid">
+          <div class="libcol libcol--tree">
+            <div class="libcol__head"><span>Folder</span><span>4</span></div>
+            <div class="libtree" id="lib-tree" role="tree" aria-label="Pohon folder markdown"></div>
+          </div>
+
+          <div class="libcol libcol--results">
+            <div class="libcol__head"><span>Cari</span><kbd>/</kbd></div>
+            <div class="libsearch">
+              <div class="searchfield">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+                <input id="lib-search" type="search" value="dokumen" autocomplete="off" spellcheck="false" aria-label="Cari dokumen" aria-controls="lib-results" />
+              </div>
+            </div>
+            <div class="libcount"><span id="lib-count">3 hasil</span><span>↑ ↓ enter</span></div>
+            <div class="libresults" id="lib-results" role="listbox" aria-label="Hasil pencarian"></div>
+          </div>
+
+          <div class="libcol libcol--doc">
+            <div class="libcol__head"><span>Dokumen</span><span id="lib-mode">Tampilan</span></div>
+            <div class="doc" id="lib-doc"></div>
+          </div>
+        </div>
+      </div>
+      <p class="meta" style="margin-top:14px">Semua isi dokumen adalah contoh. Tidak ada koneksi ke arsip sungguhan.</p>
+    </div>
+  </section>
+
+  <!-- 6 · PERIZINAN -->
+  <section class="sec sec--subtle" id="perizinan" data-od-id="perizinan">
+    <div class="shell">
+      <span class="cross" aria-hidden="true">+</span>
+      <div class="sec-head">
+        <p class="eyebrow">prostaff / perizinan</p>
+        <h2 class="h2">Perizinan dalam tiga ketukan.</h2>
+        <p class="lead">Pilih jenis dengan angka, isi tanggal, kirim dengan Ctrl dan Enter. Setiap pengajuan tercatat dengan stempel waktu dan langsung terlihat di log.</p>
+      </div>
+
+      <div class="perm">
+        <form class="panel" id="permit-form" novalidate data-od-id="perizinan-form">
+          <div class="panel__head"><span>Form pengajuan</span><span id="permit-type-label">Cuti</span></div>
+          <div class="panel__body formgrid">
+            <div class="field">
+              <span class="field__label" id="type-label">Jenis izin</span>
+              <div class="typepick" role="group" aria-labelledby="type-label">
+                <button type="button" data-permit-type="cuti" aria-pressed="true">Cuti<kbd>1</kbd></button>
+                <button type="button" data-permit-type="sakit" aria-pressed="false">Izin sakit<kbd>2</kbd></button>
+                <button type="button" data-permit-type="lembur" aria-pressed="false">Lembur<kbd>3</kbd></button>
+              </div>
+            </div>
+            <div class="formgrid formgrid--2">
+              <div class="field">
+                <label for="permit-start">Tanggal mulai</label>
+                <input class="input" id="permit-start" type="date" value="2026-12-21" required />
+              </div>
+              <div class="field">
+                <label for="permit-end">Tanggal selesai</label>
+                <input class="input" id="permit-end" type="date" value="2026-12-24" required />
+              </div>
+            </div>
+            <div class="field">
+              <label for="permit-note">Keterangan</label>
+              <textarea class="textarea" id="permit-note" placeholder="Contoh: cuti tahunan, serah terima berkas ke Laras.">Cuti tahunan, serah terima berkas ke Laras.</textarea>
+            </div>
+            <p class="hint" id="permit-hint" aria-live="polite"><kbd>Ctrl</kbd><kbd>Enter</kbd> kirim · <kbd>Esc</kbd> kosongkan</p>
+            <div class="form-actions">
+              <button class="btn btn--primary" type="submit" data-od-id="perizinan-kirim">Kirim pengajuan</button>
+              <button class="btn btn--secondary" type="reset">Kosongkan</button>
+            </div>
+          </div>
+        </form>
+
+        <div class="stack" style="gap:16px">
+          <div class="quota" data-od-id="perizinan-kuota">
+            <div class="quota__cell"><p class="quota__k">Jatah</p><p class="quota__v">12</p></div>
+            <div class="quota__cell"><p class="quota__k">Terpakai</p><p class="quota__v">4</p></div>
+            <div class="quota__cell"><p class="quota__k">Menunggu</p><p class="quota__v" id="quota-pending">0</p></div>
+            <div class="quota__cell"><p class="quota__k">Tersedia</p><p class="quota__v">8</p></div>
+          </div>
+
+          <div class="panel logpanel" data-od-id="perizinan-log">
+            <div class="panel__head"><span>Log pengajuan</span><span id="permit-log-count">3 baris</span></div>
+            <div class="panel__body">
+              <table class="loglist">
+                <thead><tr><th scope="col">Waktu</th><th scope="col">Jenis</th><th scope="col">Periode</th><th scope="col" style="text-align:right">Status</th></tr></thead>
+                <tbody id="permit-log">
+                  <tr><td class="stamp">2026-10-19 08:41:02.118</td><td>Cuti</td><td>21-12 → 24-12</td><td class="r"><span class="chip chip--approved"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m5 13 4 4L19 7"/></svg>Disetujui</span></td></tr>
+                  <tr><td class="stamp">2026-10-16 14:02:55.407</td><td>Lembur</td><td>16-10 · 3 jam</td><td class="r"><span class="chip chip--approved"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m5 13 4 4L19 7"/></svg>Disetujui</span></td></tr>
+                  <tr><td class="stamp">2026-10-12 09:15:30.006</td><td>Izin sakit</td><td>12-10</td><td class="r"><span class="chip chip--rejected"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 6l12 12M18 6 6 18"/></svg>Ditolak</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <p class="meta">Log hanya menambah baris. Tidak ada penghapusan di demo ini.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7 · ABSENSI -->
+  <section class="sec" id="absensi" data-od-id="absensi">
+    <div class="shell">
+      <span class="cross" aria-hidden="true">+</span>
+      <span class="cross cross--r" aria-hidden="true">+</span>
+      <div class="sec-head">
+        <p class="eyebrow">prostaff / absensi</p>
+        <h2 class="h2">Presensi satu tombol, satu catatan.</h2>
+        <p class="lead">Tombol yang sama mencatat masuk dan keluar. Geofence dan shift menjadi konteks, bukan gerbang berlapis.</p>
+      </div>
+
+      <div class="att">
+        <div class="att__left">
+          <button class="clockbtn" type="button" id="clock-btn" data-od-id="absensi-masuk">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M12 11v3a2 2 0 0 0 2 2"/><path d="M6.5 6.5a8 8 0 1 0 11 0"/><path d="M8 3.5c1.2.9 2.5 1.4 4 1.4s2.8-.5 4-1.4"/><path d="M9.5 9.5a3.5 3.5 0 0 1 5 0"/></svg>
+            <span>
+              <span class="clockbtn__label" id="clock-label">Masuk</span>
+              <span class="clockbtn__sub" id="clock-sub">Tekan Space untuk catat</span>
+            </span>
+            <span class="clockbtn__state" id="clock-state">09:00</span>
+          </button>
+          <div class="chips">
+            <span class="chip chip--ghost">Geofence radius 150 m (simulasi)</span>
+            <span class="chip chip--ghost">Shift 09:00-18:00 WIB</span>
+          </div>
+          <p class="att__status" id="clock-status" aria-live="polite">Belum ada catatan pada sesi ini.</p>
+        </div>
+
+        <div>
+          <div class="rekap" data-od-id="absensi-rekap">
+            <div class="rekap__cell"><p class="rekap__k">Hadir</p><p class="rekap__v">5</p></div>
+            <div class="rekap__cell"><p class="rekap__k">Terlambat</p><p class="rekap__v">2</p></div>
+            <div class="rekap__cell"><p class="rekap__k">Total keterlambatan</p><p class="rekap__v">0j 19m 0dtk <small>142ms</small></p></div>
+            <div class="rekap__cell"><p class="rekap__k">Total jam kerja</p><p class="rekap__v">45j 50m 42dtk <small>650ms</small></p></div>
+          </div>
+
+          <div class="attlog" data-od-id="absensi-log">
+            <table class="tbl">
+              <caption>Histori presensi · pekan ini</caption>
+              <thead><tr><th scope="col">Stempel waktu</th><th scope="col">Peristiwa</th><th scope="col" style="text-align:right">Status</th></tr></thead>
+              <tbody id="clock-log">
+                <tr><td class="stamp">2026-10-14 09:06:48.502 WIB</td><td>Masuk</td><td class="r"><span class="chip chip--late">Terlambat</span></td></tr>
+                <tr><td class="stamp">2026-10-14 18:02:11.088 WIB</td><td>Keluar</td><td class="r"><span class="chip chip--approved"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m5 13 4 4L19 7"/></svg>Tepat waktu</span></td></tr>
+                <tr><td class="stamp">2026-10-13 08:58:12.334 WIB</td><td>Masuk</td><td class="r"><span class="chip chip--approved"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m5 13 4 4L19 7"/></svg>Tepat waktu</span></td></tr>
+                <tr><td class="stamp">2026-10-13 18:11:09.902 WIB</td><td>Keluar</td><td class="r"><span class="chip chip--leave">Lembur 1j</span></td></tr>
+                <tr><td class="stamp">2026-10-12 09:04:51.117 WIB</td><td>Masuk</td><td class="r"><span class="chip chip--late">Terlambat</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8 · GAJI -->
+  <section class="sec sec--subtle" id="gaji" data-od-id="gaji">
+    <div class="shell">
+      <span class="cross" aria-hidden="true">+</span>
+      <div class="sec-head">
+        <p class="eyebrow">prostaff / gaji</p>
+        <h2 class="h2">Penggajian yang bisa Anda audit baris demi baris.</h2>
+        <p class="lead">Komponen bruto, potongan, dan take-home pay pada satu tabel. Ekspor CSV untuk rekap, PDF untuk slip yang bisa dicetak.</p>
+      </div>
+
+      <div class="money">
+        <div class="tblwrap">
+          <table class="tbl">
+            <caption>Periode Oktober 2026 · tiga karyawan</caption>
+            <thead>
+              <tr><th scope="col">Komponen</th><th scope="col">Raka Mahendra</th><th scope="col">Laras Wulandari</th><th scope="col">Intan Safitri</th><th scope="col">Total</th></tr>
+            </thead>
+            <tbody>
+              <tr class="grp"><td colspan="5">Penghasilan</td></tr>
+              <tr><td>Gaji pokok</td><td class="r">17.000.000</td><td class="r">11.000.000</td><td class="r">4.800.000</td><td class="r">32.800.000</td></tr>
+              <tr><td>Tunjangan</td><td class="r">4.985.000</td><td class="r">1.465.000</td><td class="r">500.000</td><td class="r">6.950.000</td></tr>
+              <tr><td>Lembur</td><td class="r">697.977</td><td class="r">350.000</td><td class="r">0</td><td class="r">1.047.977</td></tr>
+              <tr class="sum"><td>Bruto</td><td class="r">22.682.977</td><td class="r">12.815.000</td><td class="r">5.300.000</td><td class="r">40.797.977</td></tr>
+              <tr class="grp"><td colspan="5">Potongan dan penyesuaian</td></tr>
+              <tr><td>BPJS Kesehatan</td><td class="r">170.000</td><td class="r">110.000</td><td class="r">48.000</td><td class="r">328.000</td></tr>
+              <tr><td>JHT</td><td class="r">340.000</td><td class="r">220.000</td><td class="r">96.000</td><td class="r">656.000</td></tr>
+              <tr><td>JP</td><td class="r">170.000</td><td class="r">110.000</td><td class="r">48.000</td><td class="r">328.000</td></tr>
+              <tr><td>PPh 21</td><td class="r">1.311.977</td><td class="r">684.461</td><td class="r">272.500</td><td class="r">2.268.938</td></tr>
+              <tr><td>Reimbursement</td><td class="r">0</td><td class="r">0</td><td class="r">0</td><td class="r">0</td></tr>
+              <tr class="take"><td>Take-home pay</td><td class="r">20.691.000</td><td class="r">11.690.539</td><td class="r">4.835.500</td><td class="r">37.217.039</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="money__actions">
+          <button class="btn btn--secondary" type="button" id="btn-csv" aria-expanded="false" aria-controls="export-csv" data-od-id="gaji-ekspor-csv">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M4 20h16"/></svg>Ekspor CSV
+          </button>
+          <button class="btn btn--secondary" type="button" id="btn-pdf" aria-expanded="false" aria-controls="export-pdf" data-od-id="gaji-ekspor-pdf">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 3H7a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V7z"/><path d="M14 3v4h4"/><path d="M9 14h6M9 17h4"/></svg>Ekspor PDF
+          </button>
+          <p class="money__note">Angka ilustratif, bukan data payroll sungguhan.</p>
+        </div>
+
+        <div class="exports">
+          <div class="export" id="export-csv" hidden>
+            <div class="export__head"><span>Pratinjau CSV</span><span>gaji-2026-10.csv</span></div>
+            <pre class="csvbox" aria-label="Pratinjau berkas CSV">komponen,raka_mahendra,laras_wulandari,intan_safitri
+gaji_pokok,17000000,11000000,4800000
+tunjangan,4985000,1465000,500000
+lembur,697977,350000,0
+bruto,22682977,12815000,5300000
+bpjs_kesehatan,170000,110000,48000
+jht,340000,220000,96000
+jp,170000,110000,48000
+pph_21,1311977,684461,272500
+reimbursement,0,0,0
+take_home_pay,20691000,11690539,4835500</pre>
+          </div>
+          <div class="export" id="export-pdf" hidden>
+            <div class="export__head"><span>Pratinjau slip PDF</span><span>1 halaman</span></div>
+            <div class="paper" aria-label="Pratinjau slip gaji">
+              <div class="paper__top">
+                <div><p class="paper__brand">ProStaff</p><p class="paper__k">Slip gaji · Oktober 2026</p></div>
+                <div style="text-align:right"><p class="paper__k">No. 2026-10-014</p><p class="paper__k">Raka Mahendra</p></div>
+              </div>
+              <div class="paper__rows">
+                <div class="paper__row"><span>Gaji pokok</span><span>17.000.000</span></div>
+                <div class="paper__row"><span>Tunjangan</span><span>4.985.000</span></div>
+                <div class="paper__row"><span>Lembur 6 jam</span><span>697.977</span></div>
+                <div class="paper__row paper__row--sum"><span>Bruto</span><span>22.682.977</span></div>
+                <div class="paper__row"><span>BPJS Kesehatan</span><span>-170.000</span></div>
+                <div class="paper__row"><span>JHT</span><span>-340.000</span></div>
+                <div class="paper__row"><span>JP</span><span>-170.000</span></div>
+                <div class="paper__row"><span>PPh 21</span><span>-1.311.977</span></div>
+                <div class="paper__net"><span>Take-home pay</span><span>20.691.000</span></div>
+              </div>
+              <p class="paper__foot">Dokumen contoh. Bukan bukti pembayaran.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9 · EXAM -->
+  <section class="sec" id="exam" data-od-id="exam">
+    <div class="shell">
+      <span class="cross" aria-hidden="true">+</span>
+      <div class="sec-head">
+        <p class="eyebrow">prostaff / exam</p>
+        <h2 class="h2">Uji teknis yang dinilai dengan rubrik, bukan kesan.</h2>
+        <p class="lead">Kandidat mengerjakan satu kasus, penilai memberi skor 0 sampai 4 per kriteria berbobot. Hasilnya tersimpan sebagai arsip, bukan tangkapan layar.</p>
+      </div>
+
+      <div class="tabs" role="tablist" aria-label="Jenis uji">
+        <button role="tab" id="tab-rekrutmen" aria-selected="true" aria-controls="panel-exam" data-od-id="exam-tab-rekrutmen">Rekrutmen</button>
+        <button role="tab" id="tab-kinerja" aria-selected="false" aria-controls="panel-exam">Evaluasi kinerja</button>
+        <button role="tab" id="tab-kompetensi" aria-selected="false" aria-controls="panel-exam">Kompetensi</button>
+      </div>
+
+      <div id="panel-exam" role="tabpanel" aria-labelledby="tab-rekrutmen">
+        <div class="exam">
+          <article class="case" data-od-id="exam-kasus">
+            <div class="case__meta"><span>Kasus 04 · Operasional</span><span>Batas 45 menit</span></div>
+            <h3 class="h3">Antrean izin yang lambat</h3>
+            <p class="case__dek">studi kasus · konsultan hukum · 6 pengaju per hari</p>
+            <div class="case__body">
+              <p>Sebuah firma dengan 34 staf menerima rata-rata enam pengajuan izin per hari. Semua pengajuan masuk lewat pesan langsung ke dua orang admin. Pada pekan tersibuk, satu pengajuan cuti menunggu 31 jam sebelum disetujui, dan pemohon sudah membeli tiket.</p>
+              <p>Admin mencatat keputusan di buku tulis, lalu menyalinnya ke spreadsheet gaji pada akhir bulan. Dua kali dalam kuartal terakhir, cuti yang sudah disetujui tidak tercatat sebagai pengurangan jatah.</p>
+              <p><strong>Tugas.</strong> Usulkan perbaikan alur dalam 300 kata. Sebutkan:</p>
+              <ol>
+                <li>titik tunggu utama dan penyebabnya;</li>
+                <li>satu perubahan proses yang bisa dijalankan pekan depan;</li>
+                <li>satu metrik yang membuktikan perbaikan itu bekerja.</li>
+              </ol>
+            </div>
+            <div class="case__sign"><span>Lembar kasus · versi 3</span><span>Rubrik 4 kriteria</span></div>
+          </article>
+
+          <div>
+            <div class="rubric" data-od-id="exam-rubrik">
+              <div class="rubric__row">
+                <div class="rubric__top"><span class="rubric__name">Analisis masalah</span><span class="rubric__w">bobot 40 · skor 3/4</span></div>
+                <div class="bar" role="img" aria-label="Skor 3 dari 4 untuk analisis masalah"><i style="width:75%"></i></div>
+                <div class="scale"><span>0</span><span>4</span></div>
+              </div>
+              <div class="rubric__row">
+                <div class="rubric__top"><span class="rubric__name">Kualitas solusi</span><span class="rubric__w">bobot 30 · skor 3/4</span></div>
+                <div class="bar" role="img" aria-label="Skor 3 dari 4 untuk kualitas solusi"><i style="width:75%"></i></div>
+                <div class="scale"><span>0</span><span>4</span></div>
+              </div>
+              <div class="rubric__row">
+                <div class="rubric__top"><span class="rubric__name">Kejelasan komunikasi</span><span class="rubric__w">bobot 20 · skor 4/4</span></div>
+                <div class="bar" role="img" aria-label="Skor 4 dari 4 untuk kejelasan komunikasi"><i style="width:100%"></i></div>
+                <div class="scale"><span>0</span><span>4</span></div>
+              </div>
+              <div class="rubric__row">
+                <div class="rubric__top"><span class="rubric__name">Ketepatan waktu</span><span class="rubric__w">bobot 10 · skor 4/4</span></div>
+                <div class="bar" role="img" aria-label="Skor 4 dari 4 untuk ketepatan waktu"><i style="width:100%"></i></div>
+                <div class="scale"><span>0</span><span>4</span></div>
+              </div>
+            </div>
+            <div class="score">
+              <div><p class="score__k">Hasil contoh</p><p class="score__n">82,5<span style="font-size:16px;letter-spacing:0">/100</span></p></div>
+              <span class="chip chip--approved"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m5 13 4 4L19 7"/></svg>Lulus</span>
+            </div>
+
+            <div class="focuslog" data-od-id="exam-fokus">
+              <div class="panel__head"><span>Log fokus jendela (simulasi)</span><span>4 baris</span></div>
+              <div class="focuslog__body">
+                <table>
+                  <tbody>
+                    <tr><td>14:02:11</td><td>editor · fokus</td><td>+00:18:04</td></tr>
+                    <tr><td>14:20:15</td><td>pindah tab · 12s</td><td>keluar</td></tr>
+                    <tr><td>14:20:27</td><td>editor · fokus</td><td>+00:24:51</td></tr>
+                    <tr><td>14:45:18</td><td>kirim jawaban</td><td>selesai</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="meta" style="margin-top:20px">Tab Rekrutmen, Evaluasi kinerja, dan Kompetensi memakai rubrik yang sama dengan bobot berbeda.</p>
+    </div>
+  </section>
+
+  <!-- 10 · ALUR DATA (HITAM) -->
+  <section class="sec sec--dark" id="alur" data-od-id="alur-data">
+    <div class="shell">
+      <span class="cross" aria-hidden="true">+</span>
+      <span class="cross cross--r" aria-hidden="true">+</span>
+      <div class="sec-head">
+        <p class="eyebrow">prostaff / alur data</p>
+        <h2 class="h2">Satu persetujuan, beberapa modul ikut berubah.</h2>
+        <p class="lead">Peristiwa di satu modul menulis ke modul lain tanpa penyalinan manual. Empat contoh di bawah berasal dari data demo yang sama.</p>
+      </div>
+
+      <div class="flow">
+        <div class="flow__head"><span>Dari</span><span>Peristiwa</span><span>Ke</span><span>Dampak</span></div>
+
+        <div class="flow__row">
+          <div class="flow__from"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 3H7a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V7z"/><path d="M14 3v4h4"/></svg>Perizinan</div>
+          <div class="flow__event">Lembur 6 jam disetujui<span>2026-10-16 14:02:55.407</span></div>
+          <div class="flow__to"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6h16v12H4z"/><path d="M8 10h8M8 14h5"/></svg>Gaji</div>
+          <div class="flow__impact"><b>Rp697.977</b> masuk baris lembur Raka pada periode Oktober.</div>
+        </div>
+
+        <div class="flow__row">
+          <div class="flow__from"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 3H7a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V7z"/><path d="M14 3v4h4"/></svg>Perizinan</div>
+          <div class="flow__event">Cuti 21 sampai 24 Desember<span>disetujui · 4 hari kerja</span></div>
+          <div class="flow__to"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg>Absensi</div>
+          <div class="flow__impact"><span class="flow__tags"><span class="chip chip--leave">Cuti</span><span class="chip chip--holiday">Libur nasional</span></span>21-24 Des ditandai cuti, 25 Des libur nasional. Sisa cuti 12 menjadi 8.</div>
+        </div>
+
+        <div class="flow__row">
+          <div class="flow__from"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 7a1 1 0 0 1 1-1h5l2 2h8a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/></svg>Library</div>
+          <div class="flow__event">SOP lembur ditautkan ke form<span>Operasional / SOP / Lembur</span></div>
+          <div class="flow__to"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 3H7a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V7z"/><path d="M14 3v4h4"/></svg>Perizinan</div>
+          <div class="flow__impact">Form lembur menampilkan rujukan SOP yang sama versinya dengan arsip.</div>
+        </div>
+
+        <div class="flow__row">
+          <div class="flow__from"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16v16H4z"/><path d="M8 9h8M8 13h5"/></svg>Exam</div>
+          <div class="flow__event">Skor 82,5 dari 100<span>rubrik 4 kriteria · lulus</span></div>
+          <div class="flow__to"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 7a1 1 0 0 1 1-1h5l2 2h8a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/></svg>Library</div>
+          <div class="flow__impact">Skor 70 ke atas diarsipkan sebagai lampiran kompetensi kandidat.</div>
+        </div>
+      </div>
+
+      <div class="flow__cta">
+        <p class="meta">Alur ini berjalan di data demo. Tidak ada integrasi payroll pihak ketiga.</p>
+        <button class="btn btn--primary" type="button" data-demo data-od-id="alur-cta-demo">Jadwalkan demo</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11 · IMPLEMENTASI -->
+  <section class="sec" id="implementasi" data-od-id="implementasi">
+    <div class="shell">
+      <span class="cross" aria-hidden="true">+</span>
+      <div class="sec-head">
+        <p class="eyebrow">prostaff / implementasi</p>
+        <h2 class="h2">Tiga langkah menuju hari kerja pertama.</h2>
+        <p class="lead">Tanpa migrasi bertahap berbulan-bulan. Impor data yang ada, atur aturan kantor, lalu jalankan satu pekan penuh sebagai uji.</p>
+      </div>
+
+      <div class="steps">
+        <div class="step">
+          <p class="step__n">01</p>
+          <h3 class="h3">Impor</h3>
+          <p>Bawa daftar karyawan, jatah cuti, dan komponen gaji dari spreadsheet yang sudah dipakai.</p>
+          <ul><li>csv karyawan</li><li>saldo cuti</li><li>komponen gaji</li></ul>
+        </div>
+        <div class="step">
+          <p class="step__n">02</p>
+          <h3 class="h3">Atur</h3>
+          <p>Tentukan shift, radius geofence, penilai rubrik, dan siapa yang menyetujui izin tiap divisi.</p>
+          <ul><li>shift dan radius</li><li>alur persetujuan</li><li>bobot rubrik</li></ul>
+        </div>
+        <div class="step">
+          <p class="step__n">03</p>
+          <h3 class="h3">Jalankan</h3>
+          <p>Mulai dari satu divisi selama satu pekan. Bandingkan rekap presensi dan gaji dengan cara lama.</p>
+          <ul><li>uji satu divisi</li><li>rekap harian</li><li>tutup periode</li></ul>
+        </div>
+      </div>
+
+      <div class="impl__grid">
+        <figure class="photo">
+          <img src="assets/img/implementation.jpg" width="1200" height="800" alt="Rapat tim dilihat dari atas dengan laptop, tablet, dan catatan di meja kayu" loading="lazy" />
+          <figcaption class="photo__chip">Foto ilustrasi</figcaption>
+        </figure>
+        <div>
+          <p class="eyebrow">prostaff / pendampingan</p>
+          <h3 class="h3">Satu sesi 90 menit untuk memetakan modul yang Anda pakai lebih dulu.</h3>
+          <p class="body-s" style="margin-top:10px">Kami membahas struktur folder Library Anda, alur izin yang berjalan sekarang, dan komponen gaji yang wajib muncul di slip. Tidak ada presentasi penjualan.</p>
+          <div class="impl__cta">
+            <button class="btn btn--primary" type="button" data-demo data-od-id="implementasi-cta-demo">Jadwalkan demo</button>
+            <span class="hint"><kbd>?</kbd> untuk daftar shortcut</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 12 · FAQ -->
+  <section class="sec sec--subtle" id="faq" data-od-id="faq">
+    <div class="shell">
+      <span class="cross" aria-hidden="true">+</span>
+      <div class="faq">
+        <div>
+          <p class="eyebrow">prostaff / faq</p>
+          <h2 class="h2">Delapan pertanyaan yang sering masuk.</h2>
+          <p class="lead" style="margin-top:16px">Jawaban ditulis pendek. Kalau pertanyaan Anda belum ada, kirim lewat formulir di bagian bawah.</p>
+        </div>
+        <div class="faq__list" data-od-id="faq-list">
+          <details class="faq__item">
+            <summary>Apakah ProStaff memakai pop-up di dalam aplikasi?<span class="sign" aria-hidden="true"></span></summary>
+            <div class="faq__answer"><p>Tidak. Form, log, dan pratinjau berada di halaman yang sama. Konfirmasi tindakan muncul sebagai baris status di bawah kontrol, bukan jendela baru.</p></div>
+          </details>
+          <details class="faq__item">
+            <summary>Bagaimana presensi dicatat kalau tim bekerja di luar kantor?<span class="sign" aria-hidden="true"></span></summary>
+            <div class="faq__answer"><p>Presensi memakai radius geofence per lokasi. Pada demo ini radius 150 m dipakai sebagai simulasi, dan tombol Space mencatat masuk atau keluar tanpa memeriksa GPS sungguhan.</p></div>
+          </details>
+          <details class="faq__item">
+            <summary>Apakah PPh 21 dan BPJS dihitung otomatis?<span class="sign" aria-hidden="true"></span></summary>
+            <div class="faq__answer"><p>Komponen potongan dihitung dari tarif yang Anda tetapkan per karyawan, lalu ditampilkan sebagai baris terpisah di tabel gaji. Angka di halaman ini ilustratif dan tidak menggantikan perhitungan konsultan pajak.</p></div>
+          </details>
+          <details class="faq__item">
+            <summary>Format ekspor apa saja yang tersedia?<span class="sign" aria-hidden="true"></span></summary>
+            <div class="faq__answer"><p>CSV untuk rekap satu periode dan PDF untuk slip per karyawan. Keduanya memakai angka yang sama dengan tabel di layar, tanpa pembulatan tambahan.</p></div>
+          </details>
+          <details class="faq__item">
+            <summary>Apakah dokumen harus ditulis dalam markdown?<span class="sign" aria-hidden="true"></span></summary>
+            <div class="faq__answer"><p>Ya. Setiap dokumen adalah berkas markdown dengan front matter untuk pemilik, versi, dan tanggal tinjauan. Tampilan dan sumber bisa dibalik dengan satu tombol.</p></div>
+          </details>
+          <details class="faq__item">
+            <summary>Bagaimana penilaian Exam dihitung?<span class="sign" aria-hidden="true"></span></summary>
+            <div class="faq__answer"><p>Empat kriteria dengan bobot 40, 30, 20, dan 10, masing-masing diskalakan 0 sampai 4. Skor akhir adalah jumlah skor kali bobot, lalu dikonversi ke skala 100.</p></div>
+          </details>
+          <details class="faq__item">
+            <summary>Bisakah akses folder dibatasi per divisi?<span class="sign" aria-hidden="true"></span></summary>
+            <div class="faq__answer"><p>Bisa. Hak akses mengikuti folder tingkat dua, sehingga Hukum, Operasional, SDM, dan Teknik dapat punya pembaca berbeda. Dokumen di tingkat tiga mewarisi izin folder induknya.</p></div>
+          </details>
+          <details class="faq__item">
+            <summary>Bagaimana keamanan data karyawan?<span class="sign" aria-hidden="true"></span></summary>
+            <div class="faq__answer"><p>Halaman ini adalah situs demonstrasi statis. Tidak ada data karyawan yang dikirim ke server, dan semua state demo hanya hidup di peramban Anda.</p></div>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 13 · CTA PENUTUP -->
+  <section class="sec cta" id="demo" data-od-id="cta-penutup">
+    <img class="cta__img" src="assets/img/cta-office.jpg" width="1600" height="900" alt="" aria-hidden="true" loading="lazy" />
+    <span class="cta__scrim" aria-hidden="true"></span>
+    <div class="shell">
+      <div class="cta__inner">
+        <p class="eyebrow">prostaff / demo</p>
+        <h2 class="h2">Lihat ProStaff bekerja dengan data kantor Anda.</h2>
+        <p class="lead" style="margin-top:20px">Bawa satu berkas gaji dan satu daftar karyawan. Kami jalankan alurnya bersama dalam 45 menit, tanpa slide.</p>
+        <div class="cta__actions">
+          <button class="btn btn--primary" type="button" data-demo data-od-id="cta-demo">Jadwalkan demo</button>
+          <a class="btn btn--secondary" href="mailto:halo@prostaff.example?subject=Pertanyaan%20ProStaff" data-od-id="cta-pertanyaan">Kirim pertanyaan</a>
+        </div>
+        <div class="cta__meta"><span>Senin sampai Jumat</span><span>09:00-17:00 WIB</span><span>halo@prostaff.example</span></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- 14 · FOOTER -->
+<footer class="foot" data-od-id="footer">
+  <div class="shell">
+    <div class="foot__grid">
+      <div class="foot__brand">
+        <span class="logo"><span class="logo__mark" aria-hidden="true"></span>ProStaff</span>
+        <p>Sistem manajemen SDM minimalis untuk kantor yang bekerja dengan dokumen.</p>
+      </div>
+      <div>
+        <h3>Modul</h3>
+        <ul>
+          <li><a href="#library">Library</a></li>
+          <li><a href="#perizinan">Perizinan</a></li>
+          <li><a href="#absensi">Absensi</a></li>
+          <li><a href="#gaji">Gaji</a></li>
+          <li><a href="#exam">Exam</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Halaman</h3>
+        <ul>
+          <li><a href="#prinsip">Prinsip</a></li>
+          <li><a href="#alur">Alur data</a></li>
+          <li><a href="#implementasi">Implementasi</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Kontak</h3>
+        <ul>
+          <li><a href="mailto:halo@prostaff.example">halo@prostaff.example</a></li>
+          <li><span>+62 21 5000 0000</span></li>
+          <li><span>Jakarta · WIB</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot__bottom">
+      <span>Situs demonstrasi. Logo dan data ilustratif. Foto ilustrasi.</span>
+      <span>2026 · ProStaff</span>
+    </div>
+  </div>
+</footer>
+
+<dialog class="demo" id="demo-dialog" aria-labelledby="demo-title">
+  <div class="demo__bar"><span>prostaff / jadwalkan demo</span><button class="iconbtn" type="button" id="demo-close" aria-label="Tutup dialog"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
+  <div class="demo__body">
+    <h2 id="demo-title">Satu sesi, 45 menit.</h2>
+    <p class="lead">Isi tiga kolom. Kami balas dengan dua pilihan waktu dalam satu hari kerja.</p>
+    <form class="demo__form" id="demo-form" novalidate>
+      <div class="demo__grid">
+        <div class="field"><label for="d-name">Nama</label><input class="input" id="d-name" name="nama" required autocomplete="name" /></div>
+        <div class="field"><label for="d-org">Kantor</label><input class="input" id="d-org" name="kantor" required autocomplete="organization" /></div>
+      </div>
+      <div class="field"><label for="d-mail">Email</label><input class="input" id="d-mail" name="email" type="email" required autocomplete="email" /></div>
+      <div class="field"><label for="d-module">Modul yang ingin dilihat</label>
+        <select class="input" id="d-module" name="modul">
+          <option>Library dan Perizinan</option>
+          <option>Absensi dan Gaji</option>
+          <option>Exam dan rubrik</option>
+          <option>Semua modul</option>
+        </select>
+      </div>
+      <div class="demo__foot">
+        <button class="btn btn--primary" type="submit">Kirim permintaan</button>
+        <span class="hint"><kbd>Esc</kbd> untuk menutup</span>
+      </div>
+      <p class="demo__ok" id="demo-ok" aria-live="polite" hidden></p>
+    </form>
+  </div>
+</dialog>
+
+<script src="assets/prostaff.js" defer></script>
+</body>
+</html>
