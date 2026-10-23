@@ -41,6 +41,7 @@ export interface SiteConfig {
     metaTitle: string;
     metaDescription: string;
     keywords: string;
+    ogImageUrl: string | null;
   };
   analytics: {
     gaId: string | null;
@@ -90,6 +91,7 @@ export const DEFAULT_CONFIG: SiteConfig = {
     metaTitle: SITE.title,
     metaDescription: SITE.description,
     keywords: "HRIS, manajemen SDM, absensi, payroll, perizinan, exam, SOP",
+    ogImageUrl: null,
   },
   analytics: {
     gaId: null,
@@ -253,6 +255,13 @@ export const getSiteConfig = cache(async (): Promise<SiteConfig> => {
           data?.meta_description ||
           DEFAULT_CONFIG.seo.metaDescription,
         keywords: data?.seo?.keywords || data?.keywords || DEFAULT_CONFIG.seo.keywords,
+        ogImageUrl:
+          resolveUrl(
+            data?.seo?.og_image_url ||
+              data?.og_image_url ||
+              data?.seo?.og_image ||
+              data?.og_image
+          ) || DEFAULT_CONFIG.seo.ogImageUrl,
       },
       analytics: {
         gaId: data?.tracking?.ga_id || data?.analytics?.ga_id || null,

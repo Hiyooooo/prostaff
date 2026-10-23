@@ -20,6 +20,7 @@ const geistMono = Geist_Mono({
 
 export async function generateMetadata(): Promise<Metadata> {
   const config = await getSiteConfig();
+  const ogImageUrl = config.seo.ogImageUrl || `${SITE.url}/opengraph-image`;
 
   return {
     metadataBase: new URL(SITE.url),
@@ -41,11 +42,20 @@ export async function generateMetadata(): Promise<Metadata> {
       locale: SITE.locale,
       title: config.seo.metaTitle,
       description: config.seo.metaDescription,
+      images: [
+        {
+          url: ogImageUrl,
+          width: 1200,
+          height: 630,
+          alt: config.seo.metaTitle,
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title: config.seo.metaTitle,
       description: config.seo.metaDescription,
+      images: [ogImageUrl],
     },
   };
 }
