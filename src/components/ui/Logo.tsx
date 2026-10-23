@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { cn } from "@/lib/cn";
 
-// 02 §6.8: wordmark ilustratif, kotak 12×12 + teks atau logo dinamis via Next/Image unoptimized.
 export function Logo({
   className,
   src,
@@ -12,7 +11,7 @@ export function Logo({
   name?: string;
 }) {
   return (
-    <span className={cn("inline-flex items-center gap-2", className)}>
+    <span className={cn("inline-flex items-center gap-2.5", className)}>
       {src ? (
         <Image
           unoptimized
@@ -23,7 +22,10 @@ export function Logo({
           className="h-5 w-auto object-contain"
         />
       ) : (
-        <span aria-hidden className="h-3 w-3 bg-primary" />
+        <span
+          aria-hidden
+          className="inline-block h-5 w-5 shrink-0 bg-primary [mask-image:url(/icon.svg)] [mask-position:center] [mask-repeat:no-repeat] [mask-size:contain]"
+        />
       )}
       <span className="text-[15px] font-semibold tracking-[-0.02em] text-ink">{name}</span>
     </span>
