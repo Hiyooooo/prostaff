@@ -29,7 +29,7 @@ export function FloatingWhatsApp({
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Hubungi kami melalui WhatsApp"
-        className="group flex items-center gap-2.5 border border-line-mid bg-ink px-3.5 py-2.5 text-surface transition-colors hover:bg-surface hover:text-ink hover:border-ink focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-line-mid"
+        className="group flex items-center gap-2.5 border border-primary bg-primary px-3.5 py-2.5 text-primary-text transition-all hover:opacity-90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary"
       >
         <MessageSquare
           size={16}

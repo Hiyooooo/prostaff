@@ -55,7 +55,7 @@ export function HeroWindow() {
                   key={r.path}
                   className={
                     r.selected
-                      ? "flex items-center gap-2.5 bg-ink px-2.5 py-2.5 text-surface"
+                      ? "flex items-center gap-2.5 bg-primary px-2.5 py-2.5 text-primary-text"
                       : "flex items-center gap-2.5 border-b border-line px-2.5 py-2.5"
                   }
                 >
@@ -63,7 +63,7 @@ export function HeroWindow() {
                   <span
                     className={
                       r.selected
-                        ? "ml-auto font-mono text-[10.5px] text-surface"
+                        ? "ml-auto font-mono text-[10.5px] text-primary-text"
                         : "ml-auto font-mono text-[10.5px] text-ink-muted"
                     }
                   >

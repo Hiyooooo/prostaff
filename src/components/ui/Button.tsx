@@ -11,9 +11,9 @@ const SIZES = {
 } as const;
 
 const VARIANTS = {
-  primary: "border-ink bg-ink text-surface hover:bg-surface hover:text-ink",
-  secondary: "border-line-strong bg-transparent text-ink hover:border-ink hover:bg-surface-hover",
-  quiet: "border-transparent bg-transparent px-1 text-ink hover:border-ink",
+  primary: "border-primary bg-primary text-primary-text hover:opacity-90 transition-opacity",
+  secondary: "border-line-strong bg-transparent text-ink hover:border-primary hover:text-primary hover:bg-surface-hover",
+  quiet: "border-transparent bg-transparent px-1 text-ink hover:border-primary hover:text-primary",
 } as const;
 
 type Common = {

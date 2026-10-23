@@ -36,6 +36,11 @@
 
   /* Overlay foto (datar, tanpa gradien) */
   --photo-overlay: rgb(0 0 0 / 0.64);
+
+  /* Tema Utama / Tombol Primer & Aksen (bisa di-override oleh Admin Panel) */
+  --theme-primary: #000000;
+  --theme-primary-hover: #18181B;
+  --theme-primary-text: #FFFFFF;
 }
 
 /* Pita hitam: token semantik di-remap (pola prototipe) supaya komponen yang
@@ -50,6 +55,9 @@
   --text: #FFFFFF;
   --text-secondary: #A1A1AA;
   --text-muted: #A1A1AA;
+  --theme-primary: #FFFFFF;
+  --theme-primary-hover: #E4E4E7;
+  --theme-primary-text: #000000;
 }
 
 @theme inline {
@@ -71,6 +79,9 @@
   --color-ink-inverse-secondary: var(--text-inverse-secondary);
   --color-ink-inverse-muted: var(--text-inverse-muted);
   --color-photo-overlay: var(--photo-overlay);
+  --color-primary: var(--theme-primary);
+  --color-primary-hover: var(--theme-primary-hover);
+  --color-primary-text: var(--theme-primary-text);
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, monospace;
   --radius-control: 2px;
@@ -95,6 +106,11 @@ html {
 :focus-visible {
   outline: 2px solid var(--focus-ring);
   outline-offset: 2px;
+}
+
+::selection {
+  background-color: var(--theme-primary);
+  color: var(--theme-primary-text);
 }
 
 .on-inverse :focus-visible {

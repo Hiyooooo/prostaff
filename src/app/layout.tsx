@@ -50,11 +50,14 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export const viewport: Viewport = {
-  width: "device-width",
-  initialScale: 1,
-  themeColor: BRAND.white,
-};
+export async function generateViewport(): Promise<Viewport> {
+  const config = await getSiteConfig();
+  return {
+    width: "device-width",
+    initialScale: 1,
+    themeColor: config.branding.primaryColor || BRAND.white,
+  };
+}
 
 export default async function RootLayout({
   children,
@@ -67,7 +70,14 @@ export default async function RootLayout({
     <html lang="id" className={`${geistSans.variable} ${geistMono.variable}`}>
       <head>
         {config.branding.primaryColor && (
-          <style>{`:root { --primary-accent: ${config.branding.primaryColor}; }`}</style>
+          <style id="admin-theme-colors">{`
+            :root, .on-inverse {
+              --theme-primary: ${config.branding.primaryColor};
+              --theme-primary-hover: ${config.branding.primaryColor};
+              --theme-primary-text: ${BRAND.white};
+              --focus-ring: ${config.branding.primaryColor};
+            }
+          `}</style>
         )}
         {config.analytics.gaId && (
           <>

@@ -23,7 +23,7 @@ export function Logo({
           className="h-5 w-auto object-contain"
         />
       ) : (
-        <span aria-hidden className="h-3 w-3 bg-ink" />
+        <span aria-hidden className="h-3 w-3 bg-primary" />
       )}
       <span className="text-[15px] font-semibold tracking-[-0.02em] text-ink">{name}</span>
     </span>

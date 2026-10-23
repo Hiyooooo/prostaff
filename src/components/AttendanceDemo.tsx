@@ -155,8 +155,8 @@ export function AttendanceDemo({ now = Date.now }: AttendanceDemoProps) {
               className={cn(
                 "w-full h-24 border flex items-center justify-between px-6 transition-colors font-sans select-none",
                 isClockedIn
-                  ? "border-ink bg-surface text-ink hover:bg-surface-hover"
-                  : "border-ink bg-ink text-surface hover:opacity-90"
+                  ? "border-primary bg-surface text-ink hover:bg-surface-hover"
+                  : "border-primary bg-primary text-primary-text hover:opacity-90"
               )}
             >
               <div className="flex items-center gap-4 text-left">

@@ -244,7 +244,7 @@ export function PermitDemo() {
                       className={cn(
                         "flex items-center justify-between border px-2.5 py-2 transition-colors",
                         isSelected
-                          ? "border-ink bg-ink text-surface font-semibold"
+                          ? "border-primary bg-primary text-primary-text font-semibold"
                           : "border-line bg-surface hover:bg-surface-hover text-ink"
                       )}
                     >
@@ -284,7 +284,7 @@ export function PermitDemo() {
                       type="date"
                       value={startDate}
                       onChange={(e) => setStartDate(e.target.value)}
-                      className="w-full border border-line bg-surface p-2 text-ink outline-none focus:border-ink"
+                      className="w-full border border-line bg-surface p-2 text-ink outline-none focus:border-primary"
                     />
                   </div>
                   <div>
@@ -298,7 +298,7 @@ export function PermitDemo() {
                       max={8}
                       value={overtimeHours}
                       onChange={(e) => setOvertimeHours(parseInt(e.target.value, 10) || 1)}
-                      className="w-full border border-line bg-surface p-2 text-ink outline-none focus:border-ink"
+                      className="w-full border border-line bg-surface p-2 text-ink outline-none focus:border-primary"
                     />
                   </div>
                 </div>
@@ -313,7 +313,7 @@ export function PermitDemo() {
                       type="date"
                       value={startDate}
                       onChange={(e) => setStartDate(e.target.value)}
-                      className="w-full border border-line bg-surface p-2 text-ink outline-none focus:border-ink"
+                      className="w-full border border-line bg-surface p-2 text-ink outline-none focus:border-primary"
                     />
                   </div>
                   <div>
@@ -325,7 +325,7 @@ export function PermitDemo() {
                       type="date"
                       value={endDate}
                       onChange={(e) => setEndDate(e.target.value)}
-                      className="w-full border border-line bg-surface p-2 text-ink outline-none focus:border-ink"
+                      className="w-full border border-line bg-surface p-2 text-ink outline-none focus:border-primary"
                     />
                   </div>
                 </div>
@@ -351,7 +351,7 @@ export function PermitDemo() {
                   value={note}
                   onChange={(e) => setNote(e.target.value)}
                   placeholder="Keterangan pengajuan..."
-                  className="w-full border border-line bg-surface p-2 text-ink outline-none focus:border-ink resize-none"
+                  className="w-full border border-line bg-surface p-2 text-ink outline-none focus:border-primary resize-none"
                 />
               </div>
 
@@ -373,7 +373,7 @@ export function PermitDemo() {
               <button
                 type="button"
                 onClick={handleSubmit}
-                className="border border-ink bg-ink px-4 py-2 font-medium text-surface hover:opacity-90 transition-opacity"
+                className="border border-primary bg-primary px-4 py-2 font-medium text-primary-text hover:opacity-90 transition-opacity"
               >
                 Kirim pengajuan
               </button>
@@ -462,7 +462,7 @@ export function PermitDemo() {
                                 <button
                                   type="button"
                                   onClick={() => handleDecision(entry.requestId, true)}
-                                  className="border border-ink bg-ink px-2 py-0.5 text-[10.5px] text-surface hover:opacity-90"
+                                  className="border border-primary bg-primary px-2 py-0.5 text-[10.5px] text-primary-text hover:opacity-90"
                                 >
                                   Setujui
                                 </button>

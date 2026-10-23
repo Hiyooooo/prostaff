@@ -190,7 +190,7 @@ export function ExamDemo() {
               className={cn(
                 "px-5 py-3 border-r border-line transition-colors whitespace-nowrap",
                 isSelected
-                  ? "bg-surface text-ink font-semibold border-b-2 border-b-ink -mb-px"
+                  ? "bg-surface text-ink font-semibold border-b-2 border-b-primary -mb-px"
                   : "text-ink-muted hover:text-ink hover:bg-surface-hover"
               )}
             >
@@ -305,7 +305,7 @@ export function ExamDemo() {
                             className={cn(
                               "border p-2 cursor-pointer transition-colors flex flex-col items-center justify-between",
                               isChecked
-                                ? "border-ink bg-ink text-surface"
+                                ? "border-primary bg-primary text-primary-text"
                                 : "border-line bg-surface text-ink hover:bg-surface-hover"
                             )}
                           >
@@ -323,7 +323,7 @@ export function ExamDemo() {
                             <span
                               className={cn(
                                 "text-[10px] block leading-tight",
-                                isChecked ? "text-surface/80" : "text-ink-muted"
+                                isChecked ? "text-primary-text/80" : "text-ink-muted"
                               )}
                             >
                               {SCALE_LABELS[num]}

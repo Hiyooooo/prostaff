@@ -202,7 +202,7 @@ export function PayrollDemo() {
                       className={cn(
                         "p-0 text-right transition-colors",
                         isSelected
-                          ? "border-x border-line-mid bg-surface-hover"
+                          ? "border-x border-primary bg-surface-hover"
                           : ""
                       )}
                     >
@@ -348,7 +348,7 @@ export function PayrollDemo() {
                   className={cn(
                     "flex items-center justify-between border p-3 font-mono text-xs transition-colors",
                     showCsv
-                      ? "border-ink bg-ink text-surface"
+                      ? "border-primary bg-primary text-primary-text"
                       : "border-line bg-surface text-ink hover:bg-surface-hover"
                   )}
                 >
@@ -366,7 +366,7 @@ export function PayrollDemo() {
                   className={cn(
                     "flex items-center justify-between border p-3 font-mono text-xs transition-colors",
                     showPdf
-                      ? "border-ink bg-ink text-surface"
+                      ? "border-primary bg-primary text-primary-text"
                       : "border-line bg-surface text-ink hover:bg-surface-hover"
                   )}
                 >

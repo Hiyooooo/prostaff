@@ -209,7 +209,7 @@ export function LibraryDemo() {
                             className={cn(
                               "flex w-full items-center gap-1.5 px-2 py-1 text-left text-[11.5px] transition-colors",
                               isDocActive
-                                ? "bg-ink text-surface font-medium"
+                                ? "bg-primary text-primary-text font-medium"
                                 : "text-ink-secondary hover:bg-surface-hover hover:text-ink"
                             )}
                           >
@@ -245,7 +245,7 @@ export function LibraryDemo() {
                 placeholder="Cari judul, jalur, isi..."
                 aria-label="Cari dokumen"
                 aria-controls={listboxId}
-                className="w-full border border-line bg-surface py-1.5 pl-8 pr-2.5 font-mono text-[12px] text-ink outline-none focus:border-ink transition-colors"
+                className="w-full border border-line bg-surface py-1.5 pl-8 pr-2.5 font-mono text-[12px] text-ink outline-none focus:border-primary transition-colors"
               />
             </div>
             <div className="mt-2 flex items-center justify-between font-mono text-[11px] text-ink-muted">
@@ -296,7 +296,7 @@ export function LibraryDemo() {
                       isSelected
                         ? "bg-surface-hover"
                         : "hover:bg-surface-subtle",
-                      isCurrent && "border-l-2 border-l-ink"
+                      isCurrent && "border-l-2 border-l-primary"
                     )}
                   >
                     <div className="flex items-center justify-between">
@@ -332,7 +332,7 @@ export function LibraryDemo() {
                 className={cn(
                   "px-2 py-0.5 text-[10.5px] transition-colors",
                   viewMode === "rendered"
-                    ? "bg-ink text-surface font-semibold"
+                    ? "bg-primary text-primary-text font-semibold"
                     : "text-ink-secondary hover:text-ink"
                 )}
               >
@@ -345,7 +345,7 @@ export function LibraryDemo() {
                 className={cn(
                   "px-2 py-0.5 text-[10.5px] transition-colors border-l border-line",
                   viewMode === "source"
-                    ? "bg-ink text-surface font-semibold"
+                    ? "bg-primary text-primary-text font-semibold"
                     : "text-ink-secondary hover:text-ink"
                 )}
               >
